@@ -1,14 +1,14 @@
-// function verifyWorkingHours(req, res, next) {
-//     const currentDay = new Date().getDay();
-//     const currentHour = new Date().getHours();
-//     const isWeekend = currentDay === 6 || currentDay === 0; // 6 is Saturday, 0 is Sunday
+function verifyWorkingHours(req, res, next) {
+    const currentDay = new Date().getDay();
+    const currentHour = new Date().getHours();
+    const isWeekend = currentDay === 6 || currentDay === 0; // 6 is Saturday, 0 is Sunday
  
-//     if (isWeekend || currentHour < 9 || currentHour >= 17) {
-//         return res.status(403).send('Sorry, the web application is only available during working hours (Monday to Friday, from 9 to 17).');
-//       }
+    if (isWeekend || currentHour < 9 || currentHour >= 17) {
+        return res.status(403).send('Sorry, the web application is only available during working hours (Monday to Friday, from 9 to 17).');
+      }
 
-//     next();
-// }
+    next();
+}
 
 
-// module.exports = verifyWorkingHours;
+module.exports = verifyWorkingHours;

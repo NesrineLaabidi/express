@@ -1,11 +1,10 @@
 const express = require('express');
 
 const app = express();
-// const verifyWorkingHours = require('./middlewares/verifyWorkingHours'); 
+const verifyWorkingHours = require('./middlewares/verifyWorkingHours'); 
 const router=require("./route.js")
-// app.use(verifyWorkingHours,router);
+app.use(verifyWorkingHours,router);
 
-app.use(router);
 app.use(express.static(__dirname+"/css"))
 
 
